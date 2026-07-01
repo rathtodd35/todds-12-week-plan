@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Day Belly Fat Loss Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./7-Day Belly Fat Loss Plan_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF8EF;
+    --card: #FFFFFF;
+    --card-line: #E9E2CC;
+    --ink: #1E2A22;
+    --ink-dim: #6E7B6E;
+    --coral: #FF5C39;
+    --coral-dim: #FF5C3922;
+    --lime: #2FAE63;
+    --lime-dim: #2FAE6322;
+    --sun: #FFC93C;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.5;
+    padding-bottom:80px;
+  }
+  /* subtle texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: radial-gradient(circle at 1px 1px, #1E2A2212 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 20px;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:56px 0 32px;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--coral);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(34px, 6vw, 52px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+  }
+  h1 span{color:var(--lime);}
+  .hero-sub{
+    margin-top:16px;
+    color:var(--ink-dim);
+    font-size:16px;
+    max-width:50ch;
+  }
+
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:32px;
+  }
+  .stat{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:10px;
+    padding:14px 12px;
+  }
+  .stat .num{
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:16px;
+    color:var(--lime);
+    display:block;
+  }
+  .stat:nth-child(2) .num{ color:var(--coral); }
+  .stat:nth-child(3) .num{ color:#2B8FD1; }
+  .stat:nth-child(4) .num{ color:#D19A2B; }
+  .stat .lbl{
+    font-size:11px;
+    color:var(--ink-dim);
+    margin-top:4px;
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+
+  /* ---------- WEEK STRIP (sticky signature element) ---------- */
+  .week-strip{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:#FBF8EFee;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--card-line);
+    padding:14px 0;
+  }
+  .week-strip-inner{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 20px;
+    display:flex;
+    gap:6px;
+  }
+  .week-dot{
+    flex:1;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+  }
+  .week-dot .bar{
+    width:100%;
+    height:6px;
+    border-radius:4px;
+    background:var(--card-line);
+    transition:background .2s ease;
+  }
+  .week-dot.done .bar{ background:var(--lime); }
+  .week-dot .day-abbr{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--ink-dim);
+    text-transform:uppercase;
+  }
+  .week-dot.done .day-abbr{ color:var(--lime); }
+
+  /* ---------- DAY CARDS ---------- */
+  main{ padding-top:34px; }
+  .day{
+    scroll-margin-top:90px;
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:16px;
+    margin-bottom:18px;
+    overflow:hidden;
+    box-shadow:0 4px 14px #1E2A2210;
+  }
+  .day-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+    border-bottom:1px solid var(--card-line);
+  }
+  .day-head .left{ display:flex; align-items:baseline; gap:12px;}
+  .day-num{
+    font-family:var(--font-mono);
+    color:var(--ink-dim);
+    font-size:13px;
+  }
+  .day-name{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:22px;
+  }
+  .complete-toggle{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--ink-dim);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    cursor:pointer;
+    user-select:none;
+  }
+  .complete-toggle input{
+    appearance:none;
+    width:18px; height:18px;
+    border:1.5px solid var(--card-line);
+    border-radius:5px;
+    cursor:pointer;
+    position:relative;
+    background:transparent;
+  }
+  .complete-toggle input:checked{
+    background:var(--lime);
+    border-color:var(--lime);
+  }
+  .complete-toggle input:checked::after{
+    content:"✓";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    color:#16241D;
+    font-weight:700;
+  }
+
+  .day-body{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  @media (max-width:600px){
+    .day-body{ grid-template-columns:1fr; }
+  }
+  .block{
+    padding:20px 22px;
+  }
+  .block.exercise{ border-left:3px solid var(--coral); }
+  .block.diet{ border-left:3px solid var(--lime); }
+  @media (max-width:600px){
+    .block.exercise{ border-left:none; border-top:3px solid var(--coral); }
+    .block.diet{ border-left:none; border-top:3px solid var(--lime); }
+  }
+  .block-label{
+    font-family:var(--font-mono);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .block.exercise .block-label{ color:var(--coral); }
+  .block.diet .block-label{ color:var(--lime); }
+  .block p{
+    font-size:14.5px;
+    color:#465248;
+  }
+  .block p strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------- GOALS FOOTER ---------- */
+  .goals{
+    margin-top:36px;
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:16px;
+    padding:24px 22px;
+    box-shadow:0 4px 14px #1E2A2210;
+  }
+  .goals h2{
+    font-family:var(--font-display);
+    font-size:18px;
+    margin-bottom:14px;
+  }
+  .goals ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  @media (max-width:500px){ .goals ul{ grid-template-columns:1fr; } }
+  .goals li{
+    font-size:14px;
+    color:#465248;
+    display:flex;
+    gap:8px;
+  }
+  .goals li::before{
+    content:"—";
+    color:var(--lime);
+  }
+
+  footer{
+    text-align:center;
+    margin-top:40px;
+    color:var(--ink-dim);
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.04em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Starting Thursday · 7 Days</div>
+    <h1>Belly fat loss,<br><span>one consistent day</span> at a time.</h1>
+    <p class="hero-sub">Nutrition, walking, and bodyweight training built to reduce belly fat while preserving muscle. Check off days as you complete them — your progress saves on this device.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="num">120–140g</span><span class="lbl">Protein / day</span></div>
+      <div class="stat"><span class="num">8–10k</span><span class="lbl">Steps / day</span></div>
+      <div class="stat"><span class="num">2–3L</span><span class="lbl">Water / day</span></div>
+      <div class="stat"><span class="num">3hr</span><span class="lbl">Cutoff before bed</span></div>
+    </div>
+  </header>
+</div>
+
+<nav class="week-strip">
+  <div class="week-strip-inner" id="weekStrip"><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-0"><span class="bar"></span><span class="day-abbr">Thu</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-1"><span class="bar"></span><span class="day-abbr">Fri</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-2"><span class="bar"></span><span class="day-abbr">Sat</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-3"><span class="bar"></span><span class="day-abbr">Sun</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-4"><span class="bar"></span><span class="day-abbr">Mon</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-5"><span class="bar"></span><span class="day-abbr">Tue</span></a><a class="week-dot" href="file:///Users/steverath/Downloads/7-Day-Belly-Fat-Plan_2.html#day-6"><span class="bar"></span><span class="day-abbr">Wed</span></a></div>
+</nav>
+
+<div class="wrap">
+  <main id="days"><article class="day" id="day-0">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">01/07</span>
+        <span class="day-name">Thursday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="0">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>Workout A (30 min):</strong> Warm-up, then 3 rounds — Chair Squats ×15, Incline Push-ups ×10–15, Step-ups ×10/leg, Bird Dogs ×10/side, Glute Bridges ×15, Plank 20–45 sec. Finish with a 30-minute walk.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> 3 eggs + Greek yogurt + berries.<br><strong>Lunch:</strong> Grilled chicken salad.<br><strong>Snack:</strong> Protein shake + almonds.<br><strong>Dinner:</strong> Salmon, broccoli, sweet potato.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-1">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">02/07</span>
+        <span class="day-name">Friday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="1">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>45-minute brisk walk.</strong> Keep a pace where conversation is possible but a little breathless.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Oatmeal + protein shake.<br><strong>Lunch:</strong> Turkey wrap (low-carb) + veggies.<br><strong>Snack:</strong> Cottage cheese.<br><strong>Dinner:</strong> Lean beef, green beans, salad.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-2">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">03/07</span>
+        <span class="day-name">Saturday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="2">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>Workout A</strong> + a 20-minute walk.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Eggs + fruit.<br><strong>Lunch:</strong> Tuna salad.<br><strong>Snack:</strong> Greek yogurt.<br><strong>Dinner:</strong> Chicken, asparagus, brown rice.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-3">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">04/07</span>
+        <span class="day-name">Sunday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="3">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>45–60 minute walk</strong> and stretching. Active recovery day.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Greek yogurt, berries, nuts.<br><strong>Lunch:</strong> Grilled fish salad.<br><strong>Snack:</strong> Apple + peanut butter.<br><strong>Dinner:</strong> Pork tenderloin, vegetables.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-4">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">05/07</span>
+        <span class="day-name">Monday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="4">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>Workout A</strong> + a 30-minute walk.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Eggs.<br><strong>Lunch:</strong> Chicken salad.<br><strong>Snack:</strong> Protein shake.<br><strong>Dinner:</strong> Shrimp, broccoli, cauliflower rice.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-5">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">06/07</span>
+        <span class="day-name">Tuesday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="5">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>45-minute brisk walk.</strong></p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Oatmeal + eggs.<br><strong>Lunch:</strong> Turkey chili.<br><strong>Snack:</strong> Cottage cheese.<br><strong>Dinner:</strong> Grilled chicken, mixed vegetables.</p>
+      </div>
+    </div>
+  </article><article class="day" id="day-6">
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">07/07</span>
+        <span class="day-name">Wednesday</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="6">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p><strong>Workout A</strong> + a 30-minute walk.</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p><strong>Breakfast:</strong> Greek yogurt.<br><strong>Lunch:</strong> Salmon salad.<br><strong>Snack:</strong> Almonds.<br><strong>Dinner:</strong> Lean steak, Brussels sprouts, baked sweet potato.</p>
+      </div>
+    </div>
+  </article></main>
+
+  <section class="goals">
+    <h2>Daily non-negotiables</h2>
+    <ul>
+      <li>120–140g protein</li>
+      <li>8,000–10,000 steps</li>
+      <li>2–3 liters of water</li>
+      <li>No sugary drinks</li>
+      <li>Stop eating ~3 hours before bed</li>
+    </ul>
+  </section>
+
+  <footer>Built for the week ahead · checkboxes save locally in your browser</footer>
+</div>
+
+<script>
+const days = [
+  {
+    name:"Thursday", abbr:"Thu",
+    exercise:"<strong>Workout A (30 min):</strong> Warm-up, then 3 rounds — Chair Squats ×15, Incline Push-ups ×10–15, Step-ups ×10/leg, Bird Dogs ×10/side, Glute Bridges ×15, Plank 20–45 sec. Finish with a 30-minute walk.",
+    diet:"<strong>Breakfast:</strong> 3 eggs + Greek yogurt + berries.<br><strong>Lunch:</strong> Grilled chicken salad.<br><strong>Snack:</strong> Protein shake + almonds.<br><strong>Dinner:</strong> Salmon, broccoli, sweet potato."
+  },
+  {
+    name:"Friday", abbr:"Fri",
+    exercise:"<strong>45-minute brisk walk.</strong> Keep a pace where conversation is possible but a little breathless.",
+    diet:"<strong>Breakfast:</strong> Oatmeal + protein shake.<br><strong>Lunch:</strong> Turkey wrap (low-carb) + veggies.<br><strong>Snack:</strong> Cottage cheese.<br><strong>Dinner:</strong> Lean beef, green beans, salad."
+  },
+  {
+    name:"Saturday", abbr:"Sat",
+    exercise:"<strong>Workout A</strong> + a 20-minute walk.",
+    diet:"<strong>Breakfast:</strong> Eggs + fruit.<br><strong>Lunch:</strong> Tuna salad.<br><strong>Snack:</strong> Greek yogurt.<br><strong>Dinner:</strong> Chicken, asparagus, brown rice."
+  },
+  {
+    name:"Sunday", abbr:"Sun",
+    exercise:"<strong>45–60 minute walk</strong> and stretching. Active recovery day.",
+    diet:"<strong>Breakfast:</strong> Greek yogurt, berries, nuts.<br><strong>Lunch:</strong> Grilled fish salad.<br><strong>Snack:</strong> Apple + peanut butter.<br><strong>Dinner:</strong> Pork tenderloin, vegetables."
+  },
+  {
+    name:"Monday", abbr:"Mon",
+    exercise:"<strong>Workout A</strong> + a 30-minute walk.",
+    diet:"<strong>Breakfast:</strong> Eggs.<br><strong>Lunch:</strong> Chicken salad.<br><strong>Snack:</strong> Protein shake.<br><strong>Dinner:</strong> Shrimp, broccoli, cauliflower rice."
+  },
+  {
+    name:"Tuesday", abbr:"Tue",
+    exercise:"<strong>45-minute brisk walk.</strong>",
+    diet:"<strong>Breakfast:</strong> Oatmeal + eggs.<br><strong>Lunch:</strong> Turkey chili.<br><strong>Snack:</strong> Cottage cheese.<br><strong>Dinner:</strong> Grilled chicken, mixed vegetables."
+  },
+  {
+    name:"Wednesday", abbr:"Wed",
+    exercise:"<strong>Workout A</strong> + a 30-minute walk.",
+    diet:"<strong>Breakfast:</strong> Greek yogurt.<br><strong>Lunch:</strong> Salmon salad.<br><strong>Snack:</strong> Almonds.<br><strong>Dinner:</strong> Lean steak, Brussels sprouts, baked sweet potato."
+  }
+];
+
+const STORAGE_KEY = "belly-fat-plan-progress";
+let progress = {};
+try{
+  progress = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+}catch(e){ progress = {}; }
+
+function saveProgress(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){}
+}
+
+const daysEl = document.getElementById('days');
+const stripEl = document.getElementById('weekStrip');
+
+days.forEach((d, i) => {
+  const id = 'day-' + i;
+
+  // day card
+  const card = document.createElement('article');
+  card.className = 'day';
+  card.id = id;
+  card.innerHTML = `
+    <div class="day-head">
+      <div class="left">
+        <span class="day-num">0${i+1}/07</span>
+        <span class="day-name">${d.name}</span>
+      </div>
+      <label class="complete-toggle">
+        Done
+        <input type="checkbox" data-idx="${i}">
+      </label>
+    </div>
+    <div class="day-body">
+      <div class="block exercise">
+        <div class="block-label">Exercise</div>
+        <p>${d.exercise}</p>
+      </div>
+      <div class="block diet">
+        <div class="block-label">Diet</div>
+        <p>${d.diet}</p>
+      </div>
+    </div>
+  `;
+  daysEl.appendChild(card);
+
+  // week strip dot
+  const dot = document.createElement('a');
+  dot.className = 'week-dot';
+  dot.href = '#' + id;
+  dot.innerHTML = `<span class="bar"></span><span class="day-abbr">${d.abbr}</span>`;
+  stripEl.appendChild(dot);
+});
+
+function refreshUI(){
+  document.querySelectorAll('.complete-toggle input').forEach(cb => {
+    const idx = cb.dataset.idx;
+    cb.checked = !!progress[idx];
+  });
+  document.querySelectorAll('.week-dot').forEach((dot, i) => {
+    dot.classList.toggle('done', !!progress[i]);
+  });
+}
+
+document.querySelectorAll('.complete-toggle input').forEach(cb => {
+  cb.addEventListener('change', () => {
+    progress[cb.dataset.idx] = cb.checked;
+    saveProgress();
+    refreshUI();
+  });
+});
+
+refreshUI();
+</script>
+
+
+
+</body></html>
